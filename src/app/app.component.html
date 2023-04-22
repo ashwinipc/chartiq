@@ -1,0 +1,61 @@
+<div style="margin: 20px;">
+  <h2>
+    Hello world static chart example
+  </h2>
+  <cq-context>
+    <div class="ciq-nav">
+      <cq-menu class="ciq-search">
+        <cq-lookup cq-keystroke-claim cq-uppercase></cq-lookup>
+      </cq-menu>
+      <cq-menu class="ciq-menu ciq-studies collapse" cq-focus="input">
+        <span>Studies</span>
+        <cq-menu-dropdown>
+          <cq-study-legend cq-no-close>
+            <cq-section-dynamic>
+              <cq-heading>Current Studies</cq-heading>
+              <cq-study-legend-content>
+                <template cq-study-legend>
+                  <cq-item>
+                    <cq-label class="click-to-edit"></cq-label>
+                    <div class="ciq-icon ciq-close"></div>
+                  </cq-item>
+                </template>
+              </cq-study-legend-content>
+              <cq-placeholder>
+                <div
+                  stxtap="Layout.clearStudies()"
+                  class="ciq-btn sm"
+                  keyboard-selectable="true"
+                >
+                  Clear All
+                </div>
+              </cq-placeholder>
+            </cq-section-dynamic>
+          </cq-study-legend>
+          <div class="scriptiq-ui">
+            <cq-heading>ScriptIQ</cq-heading>
+            <cq-item
+              ><cq-clickable cq-selector="cq-scriptiq-editor" cq-method="open"
+                >New Script</cq-clickable
+              ></cq-item
+            >
+            <cq-scriptiq-menu></cq-scriptiq-menu>
+            <cq-separator></cq-separator>
+          </div>
+          <cq-heading cq-filter cq-filter-min="-1">Studies</cq-heading>
+          <cq-studies></cq-studies>
+        </cq-menu-dropdown>
+      </cq-menu>
+    </div>
+    <div
+      #chartContainer
+      class="chartContainer"
+      style="
+        width: 800px;
+        height: 460px;
+        position: relative;
+        border: solid 1px #aaa;
+      "
+    ></div>
+  </cq-context>
+</div>
